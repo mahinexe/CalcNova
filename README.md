@@ -1,8 +1,8 @@
 # CalcNova
 
-![CalcNova navigation and calculator interface](screenshot.jpg)
+<img src="screenshot.jpg" alt="CalcNova navigation and calculator interface" width="420">
 
-CalcNova is a polished, offline-first Flutter calculator for Android and Linux. It combines a fast everyday calculator with a scientific calculator, unit conversion tools, theme preferences, and a branded About experience.
+CalcNova is an all-in-one calculator application designed to make everyday calculations and unit conversions simple, quick, and convenient. It brings essential mathematical tools into one clean interface, including basic and scientific calculations and a range of common unit converters. The app is designed to work offline, with a focus on usability, accuracy, and a lightweight experience.
 
 ## Highlights
 
@@ -21,6 +21,18 @@ Download the latest release APK:
 [Download CalcNova v0.0.01](https://github.com/mahinexe/CalcNova/releases/latest/download/calcnova_v0.0.01.apk)
 
 Android may require permission to install an APK downloaded outside Google Play. Enable installation from the relevant source only when you trust the APK.
+
+## Install the APK
+
+1. Download the APK from the release link above.
+2. Open the downloaded APK and review the Google Play Protect warning.
+3. Tap **More details**, then tap **Install anyway** to continue.
+
+The warning can appear because the APK is distributed outside Google Play and Play Protect has not seen an app from this developer before. Only install the APK when it came from the official CalcNova release link and you trust the source.
+
+<p>
+  <img src="install_steps.jpg" alt="Steps to install CalcNova when Google Play Protect displays a warning" width="700">
+</p>
 
 ## Requirements
 
@@ -74,3 +86,7 @@ lib/
 ## Privacy
 
 Calculations, conversions, and preferences run locally on the device. Internet access is used only when a user deliberately opens an external link from the About page.
+
+## Author
+
+CalcNova is developed by [Mohammodullah Al Mahin](https://github.com/mahinexe).
