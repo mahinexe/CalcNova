@@ -18,7 +18,7 @@ CalcNova is a polished, offline-first Flutter calculator for Android and Linux. 
 
 Download the latest release APK:
 
-[Download CalcNova v0.0.01](build/app/outputs/flutter-apk/calcnova_v0.0.01.apk)
+[Download CalcNova v0.0.01](https://github.com/mahinexe/CalcNova/releases/latest/download/calcnova_v0.0.01.apk)
 
 Android may require permission to install an APK downloaded outside Google Play. Enable installation from the relevant source only when you trust the APK.
 
