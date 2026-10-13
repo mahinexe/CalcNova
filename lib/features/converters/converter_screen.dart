@@ -122,20 +122,33 @@ class _ConverterScreenState extends State<ConverterScreen> {
             style: Theme.of(context).textTheme.bodyMedium,
           ),
           const SizedBox(height: 24),
-          TextField(
-            controller: _controller,
-            keyboardType: const TextInputType.numberWithOptions(
-              decimal: true,
-              signed: true,
-            ),
-            decoration: InputDecoration(
-              labelText: 'Value',
-              suffixIcon: IconButton(
-                tooltip: 'Clear input',
-                onPressed: () => _controller.clear(),
-                icon: const Icon(Icons.clear_rounded),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('Value', style: Theme.of(context).textTheme.labelLarge),
+              const SizedBox(height: 10),
+              TextField(
+                controller: _controller,
+                maxLines: 1,
+                textAlignVertical: TextAlignVertical.center,
+                keyboardType: const TextInputType.numberWithOptions(
+                  decimal: true,
+                  signed: true,
+                ),
+                decoration: InputDecoration(
+                  hintText: 'Enter a value',
+                  contentPadding: const EdgeInsets.symmetric(
+                    horizontal: 18,
+                    vertical: 16,
+                  ),
+                  suffixIcon: IconButton(
+                    tooltip: 'Clear input',
+                    onPressed: () => _controller.clear(),
+                    icon: const Icon(Icons.clear_rounded),
+                  ),
+                ),
               ),
-            ),
+            ],
           ),
           const SizedBox(height: 14),
           Column(
@@ -217,13 +230,14 @@ class _ConverterScreenState extends State<ConverterScreen> {
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       Padding(
-        padding: const EdgeInsets.only(left: 4, bottom: 7),
+        padding: const EdgeInsets.only(left: 4),
         child: Text(
           label,
           style: Theme.of(context).textTheme.labelLarge
               ?.copyWith(color: Theme.of(context).colorScheme.primary),
         ),
       ),
+      const SizedBox(height: 10),
       DropdownButtonFormField<UnitDefinition>(
         initialValue: value,
         isExpanded: true,

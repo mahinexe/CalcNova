@@ -36,6 +36,18 @@ final tools = <ToolDefinition>[
     Icons.functions_rounded,
     [],
   ),
+  const ToolDefinition(
+    'base-calculator',
+    'Base calculator',
+    Icons.calculate_outlined,
+    [],
+  ),
+  const ToolDefinition(
+    'base-converter',
+    'Base converter',
+    Icons.swap_horiz_rounded,
+    [],
+  ),
   ToolDefinition('length', 'Length', Icons.straighten_rounded, [
     UnitDefinition('Millimeter', 'mm', _factor(0.001)),
     UnitDefinition('Centimeter', 'cm', _factor(0.01)),

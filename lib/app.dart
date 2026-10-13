@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'core/theme/app_theme.dart';
+import 'core/utils/feedback_service.dart';
 import 'features/about/about_screen.dart';
 import 'features/basic_calculator/basic_calculator_screen.dart';
+import 'features/base_numbers/base_calculator_screen.dart';
+import 'features/base_numbers/base_converter_screen.dart';
 import 'features/converters/conversion_units.dart';
 import 'features/converters/converter_screen.dart';
 import 'features/scientific_calculator/scientific_calculator_screen.dart';
@@ -50,7 +53,10 @@ class _CalcNovaAppState extends State<CalcNovaApp> {
     themeMode: _themeMode,
     builder: (context, child) => MediaQuery(
       data: MediaQuery.of(context).copyWith(textScaler: TextScaler.noScaling),
-      child: child!,
+      child: Listener(
+        onPointerUp: (_) => FeedbackService.onControlTap(widget.preferences),
+        child: child!,
+      ),
     ),
     home: CalcNovaShell(
       preferences: widget.preferences,
@@ -93,6 +99,12 @@ class _CalcNovaShellState extends State<CalcNovaShell> {
       ),
       'scientific' => ScientificCalculatorScreen(
         preferences: widget.preferences,
+        onMenu: () => _scaffoldKey.currentState?.openDrawer(),
+      ),
+      'base-calculator' => BaseCalculatorScreen(
+        onMenu: () => _scaffoldKey.currentState?.openDrawer(),
+      ),
+      'base-converter' => BaseConverterScreen(
         onMenu: () => _scaffoldKey.currentState?.openDrawer(),
       ),
       _ => ConverterScreen(
@@ -191,9 +203,9 @@ class _ToolDrawer extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 28),
-          _group(context, 'Calculators', tools.take(2)),
+          _group(context, 'Calculators', tools.take(4)),
           const SizedBox(height: 16),
-          _group(context, 'Unit converters', tools.skip(2)),
+          _group(context, 'Unit converters', tools.skip(4)),
           const Divider(height: 36),
           ListTile(
             leading: const Icon(Icons.settings_outlined),
